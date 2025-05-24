@@ -1,8 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#202020] flex justify-between px-[15.3vw] py-8 mt-14">
+    <footer id="footer" className="bg-[#202020] flex justify-between px-[15.3vw] py-8 mt-14">
       <div className="flex flex-col">
         <Image 
           src="/thrift_for_black.png"
@@ -16,8 +17,9 @@ export default function Footer() {
         <div className="flex flex-col">
           <h3 className="text-xl font-bold text-[#E86842] font-['Unbounded']">Menu</h3>
           <ul className="text-[#f1f1f1] mt-2.5">
-            <li>Despre</li>
-            <li>Solicită colectare</li>
+            <li><Link href="#howitworks">Cum asta lucrează?</Link></li>
+            <li><Link href="#rules">Ce primim/nu primim?</Link></li>
+            <li><Link href="#aboutUs">Despre noi</Link></li>
           </ul>
         </div>
         <div className="flex flex-col">

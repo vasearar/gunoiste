@@ -38,7 +38,7 @@ export default function FormularDepunere() {
   }
 
   return (
-    <section className="flex justify-center">
+    <section id='form' className="flex justify-center">
       <form onSubmit={handleSubmit} className="flex flex-col text-xl w-1/2 relative">
         <h1 className="text-[#E86842] text-5xl font-medium mx-auto">Depune o cerere</h1>
 

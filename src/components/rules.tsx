@@ -2,7 +2,7 @@
  import Cross from "@/components/cross";
  export default function FirstSection() {
    return (
-    <section className="w-1/2 relative mx-auto flex flex-col items-center mb-24">
+    <section id="rules" className="w-1/2 relative mx-auto flex flex-col items-center mb-24">
       <div className="relative flex flex-col items-center w-full">
         <h1 className="text-[#E86842] text-5xl font-medium mb-16">Ce noi primim</h1>
         <div className="flex justify-between w-full">
