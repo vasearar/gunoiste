@@ -1,16 +1,15 @@
-const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
-const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
+import type { NextRequest } from 'next/server';
+import { NextResponse } from 'next/server';
 
-export async function POST(request: { json: () => any; }) {
-  let data;
+export async function POST(request: NextRequest) {
+  let data: { name: string; email: string; phone: string; what: string };
 
   try {
     data = await request.json();
   } catch {
-    return new Response('Invalid JSON', { status: 400 });
+    return NextResponse.json({ error: 'Invalid JSON' }, { status: 400 });
   }
 
-  // ✨ formatează mesajul exact cum vrei să apară pe Telegram
   const text =
     `📝 Cerere nouă\n\n` +
     `👤 Nume: ${data.name}\n` +
@@ -18,7 +17,7 @@ export async function POST(request: { json: () => any; }) {
     `📞 Telefon: ${data.phone}\n` +
     `📦 Ce depune: ${data.what}`;
 
-  const tgRes = await fetch(
+  const tg = await fetch(
     `https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMessage`,
     {
       method: 'POST',
@@ -28,15 +27,14 @@ export async function POST(request: { json: () => any; }) {
         text,
         parse_mode: 'Markdown',
       }),
-      next: { revalidate: 0 },
-    }
+    },
   );
 
-  if (!tgRes.ok) {
-    const err = await tgRes.text();
+  if (!tg.ok) {
+    const err = await tg.text();
     console.error('Telegram error:', err);
-    return new Response('Eroare la trimitere', { status: 502 });
+    return NextResponse.json({ error: 'Telegram failed' }, { status: 502 });
   }
 
-  return new Response('OK');
+  return NextResponse.json({ ok: true });
 }

@@ -10,17 +10,18 @@ export default function FormularDepunere() {
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-
     const form = e.currentTarget;
+
+    const fd = new FormData(form);
     const body = {
-      name:  form.name.value as string,
-      email: form.email.value as string,
-      phone: form.phone.value as string,
-      what:  form.what.value as string,
+      name:  (fd.get('name')  as string)?.trim(),
+      email: (fd.get('email') as string)?.trim(),
+      phone: (fd.get('phone') as string)?.trim(),
+      what:  (fd.get('what')  as string)?.trim(),
     };
 
     const newErrors: Errors = {};
-    if (body.phone.trim().length < 9) newErrors.phone = true;
+    if (body.phone.length < 9) newErrors.phone = true;
     setErrors(newErrors);
 
     if (Object.keys(newErrors).length) return;
