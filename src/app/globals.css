@@ -1,26 +1,88 @@
 @import "tailwindcss";
 
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+  font-family: 'Space Grotesk', sans-serif;
+  background-color: #f0f0f0;
+  color: #202020;
+}
+
+.myshadow{
+  filter: drop-shadow(4px 4px 0px #202020);
+}
+
+.bgmotto{
+  margin:0;
+  min-height:100%;
+  background:linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url("../../public/motto_background.png") center/cover no-repeat fixed;
+}
+
+.myshadowwhite{
+  filter: drop-shadow(4px 4px 0px #f1f1f1);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --ani-speed: 1.5s;   
+    --ani-delay: 0.25s;  
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.arrow-parrent{
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.arrow{
+    opacity: 0;
+    position: absolute;
+    left: 50%;
+    top: 95%;
+    transform-origin: 50% 50%;
+    transform: translate3d(-50%, -50%, 0);
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.arrow-first {
+    animation: arrow-movement var(--ani-speed) ease-in-out infinite;
+}
+
+.arrow-second {
+    animation: arrow-movement var(--ani-speed) var(--ani-delay) ease-in-out infinite;
+}
+
+.arrow::before,
+.arrow::after {
+    background: #fff;
+    content: '';
+    display: block;
+    height: 3px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+}
+
+.arrow::before {
+    transform: rotate(45deg) translateX(-23%);
+    transform-origin: top left;
+}
+
+.arrow::after {
+    transform: rotate(-45deg) translateX(23%);
+    transform-origin: top right;
+}
+
+@keyframes arrow-movement {
+    0% {
+        opacity: 0;
+        top: 90%;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
