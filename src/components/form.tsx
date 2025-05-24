@@ -38,9 +38,9 @@ export default function FormularDepunere() {
   }
 
   return (
-    <section id='form' className="flex justify-center">
-      <form onSubmit={handleSubmit} className="flex flex-col text-xl w-1/2 relative">
-        <h1 className="text-[#E86842] text-5xl font-medium mx-auto">Depune o cerere</h1>
+    <section id='form' className="flex justify-center px-4">
+      <form onSubmit={handleSubmit} className="flex flex-col text-base lg:text-xl w-full lg:w-1/2 relative">
+        <h1 className="text-[#E86842] text-3xl lg:text-5xl font-medium mx-auto">Depune o cerere</h1>
 
         <label className="mt-6" htmlFor="name">Nume</label>
         <input
@@ -90,10 +90,7 @@ export default function FormularDepunere() {
         <button
           type="submit"
           disabled={status === 'sending'}
-          className="text-[#f1f1f1] bg-[#E86842] hover:bg-[#EB8B6E]
-                     mx-auto mt-10 font-medium myshadow
-                     text-2xl w-2/3 px-14 py-4 border-2 border-black"
-        >
+          className="text-[#f1f1f1] bg-[#E86842] hover:bg-[#EB8B6E] mx-auto mt-10 font-medium myshadow text-xl lg:text-2xl w-full lg:w-2/3 px-8 lg:px-14 py-4 border-2 border-black">
           {status === 'sending'
             ? 'Se trimite…'
             : status === 'ok'

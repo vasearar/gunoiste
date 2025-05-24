@@ -2,10 +2,10 @@
  import Cross from "@/components/cross";
  export default function FirstSection() {
    return (
-    <section id="rules" className="w-1/2 relative mx-auto flex flex-col items-center mb-24">
+    <section id="rules" className="w-full lg:w-2/3 2xl:w-1/2 relative mx-auto flex flex-col items-center mb-24 px-4">
       <div className="relative flex flex-col items-center w-full">
-        <h1 className="text-[#E86842] text-5xl font-medium mb-16">Ce noi primim</h1>
-        <div className="flex justify-between w-full">
+        <h1 className="text-[#E86842] text-3xl text-center lg:text-5xl font-medium mb-16">Ce noi primim</h1>
+        <div className="flex justify-between w-full md:flex-row flex-col">
           <ul className="[&>li]:flex [&>li]:gap-5 [&>li]:text-lg [&>li]:mb-6">
             <li>
               <Checkmark />
@@ -45,8 +45,8 @@
         </div>
       </div>
       <div className="relative flex flex-col items-center w-full">
-        <h1 className="text-[#E86842] text-5xl font-medium mt-24 mb-16">Ce noi nu primim</h1>
-        <div className="flex justify-between w-full">
+        <h1 className="text-[#E86842] text-3xl text-center lg:text-5xl font-medium mt-24 mb-16">Ce noi nu primim</h1>
+        <div className="flex justify-between w-full md:flex-row flex-col">
           <ul className="[&>li]:flex [&>li]:gap-4 [&>li]:text-lg [&>li]:mb-6 [&>li]:max-w-[371px]">
             <li>
               <Cross />
