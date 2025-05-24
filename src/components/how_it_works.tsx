@@ -45,7 +45,7 @@ export default function HowItWorks() {
           </div>
         </div>
         <h1 className="text-[#E86842] text-3xl lg:text-5xl font-medium mt-10 text-center lg:mt-20">Serviciu de colectare a lucrurilor inutile</h1>
-        <p className="text-base lg:text-2xl text-center w-full lg:w-1/2 mt-8">Venim și preluăm orice obiecte sau mobilier de care nu mai ai nevoie – din apartament, garaj sau birou. <br/><br/>Le sortăm cu grijă și le oferim o a <span className="underline">doua viață.</span></p>
+        <p className="text-base lg:text-2xl text-center w-full lg:w-1/2 mt-8">Venim și preluăm orice obiecte sau mobilier de care nu mai ai nevoie – din apartament, garaj sau birou. <br/><br/>Le sortăm cu grijă și le oferim a <span className="underline">doua viață.</span></p>
         <Link href="#form" className="bg-[#E86842] group hover:bg-[#EB8B6E] relative font-medium text-nowrap text-xl lg:text-2xl px-8 lg:px-14 py-4 border-2 border-black mt-12 text-[#f1f1f1]">
           <div className="absolute inset-0 bg-[#E86842] group-hover:bg-[#EB8B6E] myshadow z-0"></div>
           <span className="relative z-10">Solicită colectare online</span>
